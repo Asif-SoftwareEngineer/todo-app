@@ -4,18 +4,19 @@ A simple todo app: view, add, complete and delete tasks.
 
 ## Tech
 
-- Backend: .NET 10 Web API, controllers, CQRS (commands/queries + handlers), in-memory repository, Swagger
-- Frontend: Angular 22, Angular Material, reactive forms, signals
-- Tests: xUnit (unit + integration) - Program modules loads and run in Test Project (for integration tests)
+    - Backend: .NET 10 Web API, controllers, CQRS (commands/queries + handlers), in-memory repository, Swagger
+    - Frontend: Angular 22, Angular Material, reactive forms, signals
+    - Tests: xUnit (unit + integration) - Program modules loads and run in Test Project (for integration tests)
 
 ## Run
 
-Requires .NET 10 SDK and Node 22.22+ / 24.15+ / 26+.
+    Requires .NET 10 SDK and Node 22.22+ / 24.15+ / 26+.
 
 Backend (https://localhost:7080/swagger):
-1- cd backend
-2- dotnet dev-certs https --trust
-3- dotnet run --project TodoApi --launch-profile https
+
+        1- cd backend
+        2- dotnet dev-certs https --trust
+        3- dotnet run --project TodoApi --launch-profile https
 
     OR Solution can be run using visual studio by running it with https profile, that will trigger the swagger UI and backend running
 
@@ -28,8 +29,8 @@ Frontend (http://localhost:4200):
 
 ## Test
 
-    1- cd backend
-    2- dotnet test
+        1- cd backend
+        2- dotnet test
 
 ## Structure
 
