@@ -1,0 +1,68 @@
+<mat-toolbar color="primary">Todo List</mat-toolbar>
+
+<div class="container">
+  <mat-card>
+    <mat-card-content>
+      <form class="add-row" [formGroup]="todoForm" (ngSubmit)="addTodo()">
+        <mat-form-field class="title-field" subscriptSizing="dynamic">
+          <mat-label>New todo</mat-label>
+          <input matInput formControlName="title" maxlength="200" />
+        </mat-form-field>
+        <button mat-flat-button type="submit" [disabled]="todoForm.invalid">
+          Add
+        </button>
+      </form>
+
+      <h2>Remaining Tasks</h2>
+      @if (remainingTodos().length === 0) {
+      <p>No remaining tasks.</p>
+      }
+      <mat-list>
+        @for (todo of remainingTodos(); track todo.id) {
+        <mat-list-item>
+          <mat-checkbox
+            [checked]="todo.isCompleted"
+            (change)="toggleTodo(todo)"
+          >
+            {{ todo.title }}
+          </mat-checkbox>
+          <button
+            mat-icon-button
+            matListItemMeta
+            aria-label="Delete"
+            (click)="deleteTodo(todo.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+        }
+      </mat-list>
+
+      <h2>Completed Tasks</h2>
+      @if (completedTodos().length === 0) {
+      <p>No completed tasks.</p>
+      }
+      <mat-list>
+        @for (todo of completedTodos(); track todo.id) {
+        <mat-list-item>
+          <mat-checkbox
+            class="done"
+            [checked]="todo.isCompleted"
+            (change)="toggleTodo(todo)"
+          >
+            {{ todo.title }}
+          </mat-checkbox>
+          <button
+            mat-icon-button
+            matListItemMeta
+            aria-label="Delete"
+            (click)="deleteTodo(todo.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+        }
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
