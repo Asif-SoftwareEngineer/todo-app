@@ -13,18 +13,23 @@ A simple todo app: view, add, complete and delete tasks.
 Requires .NET 10 SDK and Node 22.22+ / 24.15+ / 26+.
 
 Backend (https://localhost:7080/swagger):
-cd backend
-dotnet dev-certs https --trust
-dotnet run --project TodoApi --launch-profile https
+1- cd backend
+2- dotnet dev-certs https --trust
+3- dotnet run --project TodoApi --launch-profile https
+
+    OR Solution can be run using visual studio by running it with https profile, that will trigger the swagger UI and backend running
 
 Frontend (http://localhost:4200):
-cd frontend
-npm install
-npm start
+1- cd frontend
+2- npm install
+3- npm start
+
+    OR front end solution can be opened using visual studio code, the command mentioned obove can be run inside the visual studio code terminal window, which will help run the frontend on http://localhost:4200
 
 ## Test
 
-    cd backend && dotnet test
+    1- cd backend
+    2- dotnet test
 
 ## Structure
 
