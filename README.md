@@ -18,7 +18,7 @@ Backend (https://localhost:7080/swagger):
 
         1- cd backend
         2- dotnet dev-certs https --trust
-        3- dotnet run --project TodoApi --launch-profile https
+        3- dotnet run --project ToDoWebApi --launch-profile https
 
         OR Solution can be run using visual studio by running it with https profile, that will trigger the swagger UI and backend running
 
